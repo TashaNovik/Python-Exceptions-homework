@@ -6,9 +6,10 @@
  когда модуль math не может быть импортирован или функция sqrt() не может быть вызвана для отрицательного числа.
 '''
 
-import math
+
 if __name__ == '__main__':
     try:
+        import math
         number_str = input("Введите число: ")
         number = float(number_str)  # Преобразование строки в число
         if number < 0:

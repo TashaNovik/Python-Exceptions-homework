@@ -10,15 +10,17 @@
 if __name__ == '__main__':
     try:
         import math
-        number_str = input("Введите число: ")
-        number = float(number_str)  # Преобразование строки в число
-        if number < 0:
-            raise ValueError("Квадратный корень из отрицательного числа вычислить нельзя")
-        result = math.sqrt(number)
-        print(f"Квадратный корень из {number} равен {result}")
     except ImportError:
         print("Модуль math не найден!")
-    except ValueError as e:
-        print(f"Ошибка преобразования: {e}") #Более информативное сообщение об ошибке
-    except Exception as e:
-        print(f"Произошла неизвестная ошибка: {e}")
+    else:
+        try:
+            number_str = input("Введите число: ")
+            number = float(number_str)  # Преобразование строки в число
+            if number < 0:
+                raise ValueError("Квадратный корень из отрицательного числа вычислить нельзя")
+            result = math.sqrt(number)
+            print(f"Квадратный корень из {number} равен {result}")
+        except ValueError as e:
+            print(f"Ошибка преобразования: {e}")  # Более информативное сообщение об ошибке
+        except Exception as e:
+            print(f"Произошла неизвестная ошибка: {e}")
